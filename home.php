@@ -26,10 +26,7 @@
 
         <a href="index.php" class="btn-link">Login Admin</a>
         <a href="daftar.php" class="btn-link">Daftar Beasiswa</a>
-
-        <?php if (isset($_SESSION['login'])): ?>
-            <a href="admin.php" class="btn-link">Dashboard Admin</a>
-        <?php endif; ?>
+        <a href="status_pendaftaran.php" class="btn-link">Status Pendaftaran</a>
     </div>
 
     <footer>

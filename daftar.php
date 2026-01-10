@@ -104,9 +104,9 @@
             <label>Pilihan Beasiswa</label>
             <select name="pilihan" id="pilihan" required disabled>
                 <option value="">Pilih Beasiswa</option>
-                <option value="A">Beasiswa KJP</option>
-                <option value="B">Beasiswa Tidak Mampu</option>
-                <option value="C">Beasiswa Prestasi</option>
+                <option value="Beasiswa KJP">Beasiswa KJP</option>
+                <option value="Beasiswa Tidak Mampu">Beasiswa Tidak Mampu</option>
+                <option value="Beasiswa Prestasi">Beasiswa Prestasi</option>
             </select>
 
             <label>Upload Berkas</label>
@@ -115,6 +115,10 @@
             <button type="submit">Daftar</button>
         </form>
 
+        <!-- New Button to Check Registration Status -->
+        <p><a href="status_pendaftaran.php">Lihat Status Pendaftaran</a></p>
+
+        <!-- Link to go back to login page -->
         <p><a href="index.php">Kembali ke Login</a></p>
     </div>
 </body>

@@ -29,6 +29,7 @@
         </form>
 
         <p><a href="home.php">Daftar Beasiswa</a></p>
+
     </div>
 </body>
 
