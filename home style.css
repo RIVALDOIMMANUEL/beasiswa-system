@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Card */
+.card {
+    width: 90%;
+    max-width: 500px;
+    background: #ffffffdd;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    margin-top: 40px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Tombol */
+.btn-link {
+    display: block;
+    padding: 12px 0;
+    margin: 8px 0;
+    background: #3498db;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.25s;
+}
+
+.btn-link:hover {
+    background: #1f78c5;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    font-size: 13px;
+    color: #fff;
+    opacity: 0.9;
+    padding: 10px 0;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
