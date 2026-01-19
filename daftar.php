@@ -68,16 +68,16 @@
         <h2>Form Beasiswa</h2>
 
         <form action="simpan.php" method="POST" enctype="multipart/form-data">
-            <label>Nama</label>
+            <label>Nama*</label>
             <input name="nama" required>
 
-            <label>Email</label>
+            <label>Email*</label>
             <input type="email" name="email" required>
 
-            <label>No HP</label>
+            <label>No HP*</label>
             <input name="hp" required>
 
-            <label>Semester</label>
+            <label>Semester*</label>
             <select name="semester" id="semester" required onchange="autoFillIpk()">
                 <option value="">Pilih Semester</option>
                 <option value="1">1</option>
@@ -90,7 +90,7 @@
                 <option value="8">8</option>
             </select>
 
-            <label>Jenjang Pendidikan</label>
+            <label>Jenjang Pendidikan*</label>
             <select name="jenjang" required>
                 <option value="">Pilih Jenjang</option>
                 <option value="S1">S1</option>
@@ -98,10 +98,10 @@
                 <option value="S3">S3</option>
             </select>
 
-            <label>IPK Terakhir</label>
+            <label>IPK Terakhir*</label>
             <input type="number" name="ipk" id="ipk" min="2.9" max="4.00" step="0.01" required readonly>
 
-            <label>Pilihan Beasiswa</label>
+            <label>Pilihan Beasiswa*</label>
             <select name="pilihan" id="pilihan" required disabled>
                 <option value="">Pilih Beasiswa</option>
                 <option value="Beasiswa KJP">Beasiswa KJP</option>
@@ -109,17 +109,20 @@
                 <option value="Beasiswa Prestasi">Beasiswa Prestasi</option>
             </select>
 
-            <label>Upload Berkas</label>
+            <label>Upload Berkas*</label>
             <input type="file" name="berkas" id="berkas" accept=".pdf,.jpg,.jpeg,.png,.zip" required disabled>
 
             <button type="submit">Daftar</button>
         </form>
 
         <!-- New Button to Check Registration Status -->
-        <p><a href="status_pendaftaran.php">Lihat Status Pendaftaran</a></p>
+        <p><a href="home.php">Lihat Status Pendaftaran</a></p>
 
         <!-- Link to go back to login page -->
-        <p><a href="index.php">Kembali ke Login</a></p>
+        <p><a href="index.php">Kembali Ke Login</a></p>
+        <footer style="text-align: center; margin-top: 20px; font-size: 14px; color: #555;">
+            © <?= date("Y"); ?> Portal Beasiswa. All Rights Reserved.
+        </footer>
     </div>
 </body>
 

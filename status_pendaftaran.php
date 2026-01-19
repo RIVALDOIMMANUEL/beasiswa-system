@@ -9,7 +9,6 @@ if (!$conn) {
 
 // Ambil email dari form pencarian
 $email = isset($_POST['email']) ? $_POST['email'] : ''; // Ambil email dari form jika ada
-
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +26,7 @@ $email = isset($_POST['email']) ? $_POST['email'] : ''; // Ambil email dari form
         <h2>Status Pendaftaran</h2>
 
         <!-- Form untuk mencari status berdasarkan email -->
-        <form method="POST" action="">
+        <form method="POST" action="status_pendaftaran.php">
             <label for="email">Masukkan Email Anda:</label>
             <input type="email" name="email" id="email" required>
             <button type="submit">Cari Status</button>
@@ -46,13 +45,24 @@ $email = isset($_POST['email']) ? $_POST['email'] : ''; // Ambil email dari form
             // Jika data ditemukan
             if (mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_assoc($result);
-                $status = $row['status']; // Misal kolom 'status' ada di database
+                $status = $row['status']; // Kolom 'status' ada di database
                 $beasiswa = $row['pilihan'];
+                $jenjang = $row['jenjang']; // Ambil jenjang dari database
 
                 echo "<h3>Informasi Pendaftaran</h3>";
                 echo "<p>Nama: " . htmlspecialchars($row['nama']) . "</p>";
                 echo "<p>Email: " . htmlspecialchars($row['email']) . "</p>";
-                echo "<p>Status Pendaftaran: " . ($status == 'diterima' ? 'Diterima' : 'Tidak Diterima') . "</p>";
+                echo "<p>Jenjang: " . htmlspecialchars($jenjang) . "</p>"; // Tampilkan jenjang
+
+                // Menampilkan status berdasarkan nilai status dari database
+                if ($status == 'diterima') {
+                    echo "<p>Status Pendaftaran: Diterima</p>";
+                } elseif ($status == 'tidak diterima') {
+                    echo "<p>Status Pendaftaran: Tidak Diterima</p>";
+                } else {
+                    echo "<p>Status Pendaftaran: Belum Diperiksa</p>";
+                }
+
                 echo "<p>Beasiswa yang dipilih: " . htmlspecialchars($beasiswa) . "</p>";
             } else {
                 echo "<p>Data pendaftaran tidak ditemukan. Pastikan Anda sudah mendaftar sebelumnya dengan email yang benar.</p>";
@@ -71,6 +81,10 @@ $email = isset($_POST['email']) ? $_POST['email'] : ''; // Ambil email dari form
         <!-- Tombol untuk kembali ke halaman pendaftaran -->
         <p><a href="daftar.php">Kembali ke Daftar</a></p>
         <p><a href="index.php">Login</a></p>
+
+        <footer style="text-align: center; margin-top: 20px; font-size: 14px; color: #555;">
+            © <?= date("Y"); ?> Portal Beasiswa. All Rights Reserved.
+        </footer>
     </div>
 
 </body>

@@ -119,6 +119,55 @@ p a:hover {
     color: #2980b9;
 }
 
+/* SUCCESS / ERROR BOX */
+.success-box,
+.error-box {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.7s ease;
+    text-align: center;
+    border-left: 8px solid;
+}
+
+.success-box {
+    border-color: #27ae60;
+}
+
+.error-box {
+    border-color: #e74c3c;
+}
+
+.success-box h2,
+.error-box h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.success-box a,
+.error-box a {
+    color: #3498db;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background: #ecf6ff;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 12px;
+    transition: 0.3s ease;
+}
+
+.success-box a:hover,
+.error-box a:hover {
+    background: #dceeff;
+    transform: translateY(-2px);
+}
+
 /* ANIMATION */
 @keyframes fadeIn {
     from {
